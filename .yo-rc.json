@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "bengreenier",
+      "authorEmail": "ben@bengreenier.com",
+      "authorUrl": "https://github.com/bengreenier"
+    }
+  }
+}

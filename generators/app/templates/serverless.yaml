@@ -1,0 +1,35 @@
+# see https://github.com/serverless/serverless/blob/master/lib/plugins/create/templates/azure-nodejs/serverless.yml
+# for the basis of this template
+#
+# {variable} values will be replaced
+#
+service: <%= appName %>
+
+provider:
+  name: azure
+  location: <%= appLocation %>
+
+plugins:
+  - serverless-azure-functions
+
+functions:
+  <%= fnStartName %>:
+    handler: handler.<%= fnStartName %>
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel : anonymous
+      - http: true
+        x-azure-settings:
+          direction: out
+          name: res
+  <%= fnStopName %>:
+    handler: handler.<%= fnStopName %>
+    events:
+      - http: true
+        x-azure-settings:
+          authLevel : anonymous
+      - http: true
+        x-azure-settings:
+          direction: out
+          name: res
